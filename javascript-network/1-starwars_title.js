@@ -1,13 +1,9 @@
 const request = require('request');
 
-const url = process.argv[2];
+const id = process.argv[2];
+const url = `https://swapi-api.alx-tools.com/api/films/${id}`;
 
-request.get(url, function (error, response, body) {
-  const films = JSON.parse(body);
-  const character = films.results.filter((film) =>
-    film.characters.some((characterUrl) => characterUrl.endsWith('/18/'))
-  );
-
-  const count = character.length;
-  console.log(count);
+request.get(url, function (error, response, body){
+    const film = JSON.parse(body)
+    console.log(film.title);
 });
