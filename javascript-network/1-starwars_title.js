@@ -11,4 +11,3 @@ request.get(url, function (error, response, body) {
   const count = character.length;
   console.log(count);
 });
-
